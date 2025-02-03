@@ -1,0 +1,49 @@
+# qwaxkblaxk.com - Social Links Hub
+
+This repository hosts the source code for my personal social links website, qwaxkblaxk.com.  It serves as a central hub to easily access all my online profiles and connect with me across different platforms.
+
+## About
+
+This simple website provides a clean and organized way to find me on various social media and other online platforms.  It's designed for easy navigation and quick access to my profiles.
+
+## Technologies Used
+
+*   **HTML:**  The structure and content of the website.
+*   **CSS:** Styling and visual presentation of the website.  (Mention specific CSS frameworks or preprocessors if used, e.g., Tailwind CSS, Bootstrap, Sass)
+*   **(Optional) JavaScript:**  (If used for any interactive elements, animations, or dynamic content)
+*   **(Optional) [Hosting Platform]:** (e.g., GitHub Pages, Netlify, Vercel) - Specify how the site is deployed.
+
+## Features
+
+*   Clear and concise display of social media icons and links.
+*   Responsive design for optimal viewing on different devices (desktops, tablets, and mobile phones).
+*   Easy to update and maintain.
+*   (Optional) Add any other features you might have, like a contact form, blog link, etc.
+
+## How to Run Locally (If Applicable)
+
+If you want to run this website locally, follow these steps:
+
+1.  Clone the repository: `git clone https://github.com/[your-username]/[repository-name].git`
+2.  Open the `index.html` file in your web browser.
+
+## Customization
+
+You can easily customize this website to fit your own needs.  Here are some things you can change:
+
+*   **Social Links:**  Modify the `index.html` file to update the links and icons for your own social media profiles.
+*   **Styling:**  Edit the CSS file (or SCSS/Sass files if used) to change the website's appearance, including colors, fonts, and layout.
+*   **Images/Icons:** Replace the default icons with your own.
+
+## Contributing (If Applicable)
+
+If you'd like to contribute to this project, please open an issue or submit a pull request.
+
+## Contact
+
+You can reach me through the social links provided on the website.
+
+## License (Optional)
+
+(Add a license if you want to specify how others can use your code.  MIT is a common choice.)
+

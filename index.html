@@ -4,11 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg">
   <link rel="stylesheet" href="styles.css">
-
   <title>Quintin's Socials</title>
   <style>
     .attribution {
@@ -19,14 +16,27 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+    .hidden {
+      display: none;
+    }
+
+    .blocked-message {
+      text-align: center;
+      font-size: 24px;
+      color: #ff0000;
+      padding: 20px;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      margin-top: 50px;
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
     <div class="info">
-        <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="IMG-1324" />
-      </a>
+      <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="IMG-1324" />
       <h2>Quintin Proctor</h2>
       <p>Austin, Texas</p>
       <p>"Front-end developer and avid motorcycle enthusiast."</p>
@@ -39,6 +49,38 @@
       <button><a href="">Cash App</a></button>
     </div>
   </div>
+
+  <script>
+    async function checkEditMode() {
+      try {
+        const response = await fetch('https://sheetdb.io/api/v1/s65tpktgdyvir');
+        const data = await response.json();
+
+        // Log the entire API response to confirm its structure
+        console.log("Full API Response:", data);
+
+        // Access the value of "edit_mode"
+        const editMode = data[0]?.edit_mode;
+
+        // Log the value of edit_mode for verification
+        console.log("Edit Mode Value:", editMode);
+
+        // If edit_mode is 0, hide the content and show a blocked message
+        if (editMode === '0') {
+          console.log("Edit mode is 0, hiding content...");
+          document.body.innerHTML = `
+            <div class="blocked-message">
+              Quintin is temporarily blocked access to this site. Updates or other things may be in the process of being applied.
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error('Error fetching data from Google Sheet:', error);
+      }
+    }
+
+    checkEditMode();
+  </script>
 </body>
 
 </html>

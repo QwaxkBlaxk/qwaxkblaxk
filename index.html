@@ -1,90 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg">
-  <link rel="stylesheet" href="styles.css">
-  <title>Quintin's Socials</title>
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .blocked-message {
-      text-align: center;
-      font-size: 24px;
-      color: #ff0000;
-      padding: 20px;
-      background-color: #f8d7da;
-      border: 1px solid #f5c6cb;
-      margin-top: 50px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image in Iframe</title>
 </head>
-
 <body>
-  <div class="card">
-    <div class="info">
-      <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="IMG-1324" />
-      <h2>Quintin Proctor</h2>
-      <p>Austin, Texas</p>
-      <p>"Front-end developer and avid motorcycle enthusiast."</p>
-    </div>
-    <div class="links">
-      <button><a href="https://instagram.com/qxkbxk" target="_blank">Instagram</a></button>
-      <button><a href="https://tiktok.com/@qkbxk" target="_blank">TikTok</a></button>
-      <button><a href="https://snapchat.com/add/qp2.xx" target="_blank">Snapchat</a></button>
-      <button><a href="https://step.com/$/qwaxkblaxk" target="_blank">Step Banking</a></button>
-      <button><a href="https://cash.app/$QwaxkBlaxk" target="_blank">Cash App</a></button>
-    </div>
-  </div>
-
-  <script>
-    async function checkEditMode() {
-      try {
-        const response = await fetch('https://sheetdb.io/api/v1/s65tpktgdyvir');
-        const data = await response.json();
-
-        // Log the entire API response to confirm its structure
-        console.log("Full API Response:", data);
-
-        // Access the value of "edit_mode"
-        const editMode = data[0]?.edit_mode;
-
-        // Log the value of edit_mode for verification
-        console.log("Edit Mode Value:", editMode);
-
-        // If edit_mode is 0, hide the content and show a blocked message
-        if (editMode === '0') {
-          console.log("Edit mode is 0, hiding content...");
-          document.body.innerHTML = ` 
-            <div class="blocked-message">
-              Quintin is temporarily blocked access to this site. Updates or other things may be in the process of being applied (V2.1.0R2).
-            </div>
-          `;
-        }
-      } catch (error) {
-        console.error('Error fetching data from Google Sheet:', error);
-      }
-    }
-
-    // Check edit mode every 2 seconds
-    setInterval(checkEditMode, 2000);
-
-    // Initial check on load
-    checkEditMode();
-  </script>
+    <iframe src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgUTAvbq2r0UtEmOFo2L9lJT4Gz-bptVgeQ&s" width="100%" height="100%" style="border: none;"></iframe>
 </body>
-
 </html>

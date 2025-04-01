@@ -15,6 +15,22 @@ body {
   background-color: hsl(0, 0%, 8%);
 }
 
+/* Exit Button */
+.exit-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  color: hsl(75, 94%, 57%);
+}
+
 .card {
   width: 25rem;
   padding: 2rem;
@@ -74,7 +90,7 @@ body {
   height: 100%;
   width: 100%;
   padding: 0 1rem;
-  line-height: 3rem; /* Aligns the text vertically */
+  line-height: 3rem;
 }
 
 .links button:hover {

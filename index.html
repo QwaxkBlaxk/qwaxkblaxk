@@ -3,10 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- Viewport settings to ensure proper scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" />
-  <link rel="stylesheet" href="styles.css" />
   <title>Quintin's Socials</title>
   <style>
     /* Global Styles */
@@ -23,7 +21,8 @@
       flex-direction: column;
       align-items: center;
       background-color: hsl(0, 0%, 8%);
-      justify-content: center; /* Ensures the content is centered vertically */
+      justify-content: center;
+      overflow: hidden;
     }
 
     /* Exit Button */
@@ -126,7 +125,7 @@
       }
     }
 
-    /* Card Layout */
+    /* Card Styles */
     .card {
       width: 25rem;
       padding: 2rem;
@@ -202,19 +201,18 @@
         width: 85%;
       }
     }
-
-    /* iFrame Specific Styles */
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      transform: none; /* Ensure iframe content scales correctly */
-    }
-
   </style>
 </head>
 
 <body>
+
+  <!-- Redirect to GitHub on Mobile Devices -->
+  <script>
+    if (window.innerWidth <= 800 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      window.location.href = "https://qwaxkblaxk.github.io/qwaxkblaxk";
+    }
+  </script>
+
   <!-- Exit Button -->
   <button class="exit-button" id="exit-btn">⏎</button>
 
@@ -231,7 +229,7 @@
   <div class="card">
     <div class="info">
       <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="IMG-1324" />
-      <h2>Quintin Testing</h2> <!-- Updated name -->
+      <h2>Quintin Testing</h2>
       <p>Austin, Texas</p>
       <p>"Front-end developer and avid motorcycle enthusiast."</p>
     </div>
@@ -243,50 +241,6 @@
       <button><a href="https://cash.app/$QwaxkBlaxk" target="_blank">Cash App</a></button>
     </div>
   </div>
-
-  <script>
-    const correctPassword = "pqdapwjks3otpctoppm";
-
-    const modal = document.getElementById("passwordModal");
-    const passwordInput = document.getElementById("passwordInput");
-
-    function showModal() {
-      modal.classList.add("show");
-      setTimeout(() => passwordInput.focus(), 200);
-    }
-
-    function closeModal() {
-      modal.classList.remove("show");
-      passwordInput.value = "";
-    }
-
-    document.getElementById("exit-btn").addEventListener("click", showModal);
-    document.getElementById("closeModal").addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
-    });
-
-    document.getElementById("submitPassword").addEventListener("click", () => {
-      const input = passwordInput.value;
-      if (input === correctPassword) {
-        sessionStorage.setItem("authenticated", "true");
-        window.location.href = "qkbxk1kh.html";
-      } else {
-        alert("Incorrect password.");
-        passwordInput.value = "";
-      }
-    });
-
-    passwordInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        document.getElementById("submitPassword").click();
-      }
-    });
-  </script>
 </body>
 
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" />
   <title>Quintin's Socials</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
     * {
       margin: 0;
       padding: 0;
@@ -107,6 +109,12 @@
       color: hsl(0, 0%, 20%);
     }
 
+    @media (max-width: 375px) {
+      .card {
+        width: 85%;
+      }
+    }
+
     .modal {
       visibility: hidden;
       opacity: 0;
@@ -189,32 +197,11 @@
         opacity: 1;
       }
     }
-
-    @media (max-width: 375px) {
-      .card {
-        width: 85%;
-      }
-    }
   </style>
-
-  <script>
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-      window.location.href = "https://qwaxkblaxk.github.io/qwaxkblaxk";
-    }
-  </script>
 </head>
 
 <body>
   <button class="exit-button" id="exit-btn">⏎</button>
-
-  <div class="modal" id="passwordModal">
-    <div class="modal-content" id="modalContent">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h3>Enter Password</h3>
-      <input type="password" id="passwordInput" placeholder="Password" />
-      <button id="submitPassword">Submit</button>
-    </div>
-  </div>
 
   <div class="card">
     <div class="info">
@@ -232,9 +219,17 @@
     </div>
   </div>
 
+  <div class="modal" id="passwordModal">
+    <div class="modal-content" id="modalContent">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Enter Password</h3>
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <button id="submitPassword">Submit</button>
+    </div>
+  </div>
+
   <script>
     const correctPassword = "pqdapwjks3otpctoppm";
-
     const modal = document.getElementById("passwordModal");
     const passwordInput = document.getElementById("passwordInput");
 
@@ -274,6 +269,24 @@
         document.getElementById("submitPassword").click();
       }
     });
+
+    function isMobile() {
+      return /Mobi|Android/i.test(navigator.userAgent);
+    }
+
+    function isInIframe() {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
+    }
+
+    if (isMobile() && isInIframe()) {
+      document.body.style.transform = "scale(1.5)";
+      document.body.style.transformOrigin = "top left";
+    }
   </script>
 </body>
+
 </html>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" />
   <link rel="stylesheet" href="styles.css" />
   <title>Quintin's Socials</title>
@@ -22,21 +22,7 @@
       flex-direction: column;
       align-items: center;
       background-color: hsl(0, 0%, 8%);
-    }
-
-    /* Red Banner */
-    .red-banner {
-      background-color: red;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 10px;
-      text-align: center;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
+      justify-content: center; /* Ensures the content is centered vertically */
     }
 
     /* Exit Button */
@@ -148,7 +134,6 @@
       border-radius: 10px;
       background-color: hsl(0, 0%, 12%);
       margin: auto;
-      margin-top: 50px;
     }
 
     .info img {
@@ -227,9 +212,6 @@
 </head>
 
 <body>
-  <!-- Red Banner -->
-  <div class="red-banner">Testing</div>
-
   <!-- Exit Button -->
   <button class="exit-button" id="exit-btn">⏎</button>
 
@@ -246,7 +228,7 @@
   <div class="card">
     <div class="info">
       <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="IMG-1324" />
-      <h2>Quintin Proctor</h2>
+      <h2>Quintin Testing</h2> <!-- Updated name -->
       <p>Austin, Texas</p>
       <p>"Front-end developer and avid motorcycle enthusiast."</p>
     </div>

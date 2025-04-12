@@ -110,6 +110,7 @@
       color: hsl(0, 0%, 20%);
     }
 
+    /* Modal */
     .popup {
       visibility: hidden;
       opacity: 0;
@@ -141,6 +142,7 @@
       animation: popIn 0.25s ease-in-out;
       width: 320px;
       position: relative;
+      border: 2px solid #ccc;
     }
 
     .popup-content h3 {
@@ -154,10 +156,35 @@
       color: #fff;
       border-radius: 8px;
       cursor: pointer;
+      margin-top: 1rem;
     }
 
     .popup-content button:hover {
       background: #555;
+    }
+
+    .popup-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .popup-content .close-btn:hover {
+      color: hsl(75, 94%, 57%);
+    }
+
+    .popup-content input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border: 2px solid #ccc;
+      font-size: 16px;
     }
 
     @keyframes popIn {
@@ -169,12 +196,6 @@
       100% {
         transform: scale(1);
         opacity: 1;
-      }
-    }
-
-    @media (max-width: 375px) {
-      .card {
-        width: 85%;
       }
     }
   </style>
@@ -199,37 +220,55 @@
     </div>
   </div>
 
+  <!-- Modal -->
   <div class="popup" id="popup">
     <div class="popup-content">
-      <h3>Are you on Mobile or Desktop?</h3>
-      <button id="mobileBtn">Mobile</button>
-      <button id="desktopBtn">Desktop</button>
+      <button class="close-btn" id="close-btn">&times;</button>
+      <h3 id="modal-text">Enter your password:</h3>
+      <input type="password" id="password" placeholder="Enter your password" autofocus />
+      <button onclick="checkPassword()">Submit</button>
     </div>
   </div>
 
   <script>
-    function checkDeviceType() {
-      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-      const popup = document.getElementById('popup');
-      const mobileBtn = document.getElementById('mobileBtn');
-      const desktopBtn = document.getElementById('desktopBtn');
+    // Show the modal when the exit button is clicked
+    document.getElementById('exit-btn').addEventListener('click', function() {
+      document.getElementById('popup').classList.add('show');
+    });
 
-      popup.classList.add('show'); // Show the popup
+    // Close the modal when the close button (X) is clicked
+    document.getElementById('close-btn').addEventListener('click', function() {
+      document.getElementById('popup').classList.remove('show');
+    });
 
-      // If user clicks "Mobile", they will be redirected to the new GitHub page
-      mobileBtn.addEventListener('click', function() {
-        if (isMobile) {
-          window.location.href = 'https://qwaxkblaxk.github.io/iostest/';
-        }
-      });
+    // Close the modal when the "Esc" key is pressed
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        document.getElementById('popup').classList.remove('show');
+      }
+    });
 
-      // If user clicks "Desktop", just hide the popup (no redirect)
-      desktopBtn.addEventListener('click', function() {
-        popup.classList.remove('show');
-      });
+    // Function to check the password entered by the user
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      const modalText = document.getElementById('modal-text');
+      
+      // Correct password is pqdapwjks3otpctoppm
+      if (password === 'pqdapwjks3otpctoppm') {
+        document.getElementById('popup').classList.remove('show');
+        window.location.href = 'qkbxk1kh.html'; // Redirect to qkbxk1kh.html
+      } else {
+        modalText.textContent = "Incorrect password!";
+        
+        // After 2 seconds, change text back to "Enter your password"
+        setTimeout(function() {
+          modalText.textContent = "Enter your password:";
+        }, 2000);
+      }
     }
 
-    checkDeviceType();
+    // Make sure the password input is focused immediately on page load
+    document.getElementById('password').focus();
   </script>
 </body>
 </html>

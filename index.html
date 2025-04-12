@@ -4,10 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" />
   <title>Quintin's Socials</title>
+  <script>
+    // Mobile redirect — this runs ASAP in the <head>
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      window.location.replace("https://qwaxkblaxk.github.io/qwaxkblaxk");
+    }
+  </script>
   <style>
-    /* Global Styles */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
     * {
       margin: 0;
       padding: 0;
@@ -22,10 +28,8 @@
       align-items: center;
       background-color: hsl(0, 0%, 8%);
       justify-content: center;
-      overflow: hidden;
     }
 
-    /* Exit Button */
     .exit-button {
       position: absolute;
       top: 10px;
@@ -41,91 +45,6 @@
       color: hsl(75, 94%, 57%);
     }
 
-    /* Modal Styles */
-    .modal {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      backdrop-filter: blur(6px);
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
-
-    .modal.show {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .modal-content {
-      background: #fff;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      animation: popIn 0.25s ease-in-out;
-      width: 320px;
-      position: relative;
-    }
-
-    .modal-content h3 {
-      margin-bottom: 1rem;
-    }
-
-    .modal-content input {
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 1rem;
-    }
-
-    .modal-content button {
-      padding: 0.6rem 1.2rem;
-      border: none;
-      background: #333;
-      color: #fff;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .modal-content button:hover {
-      background: #555;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      font-size: 20px;
-      cursor: pointer;
-      color: #999;
-    }
-
-    .close-btn:hover {
-      color: #000;
-    }
-
-    @keyframes popIn {
-      0% {
-        transform: scale(0.95);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* Card Styles */
     .card {
       width: 25rem;
       padding: 2rem;
@@ -205,26 +124,7 @@
 </head>
 
 <body>
-
-  <!-- Redirect to GitHub on Mobile Devices -->
-  <script>
-    if (window.innerWidth <= 800 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-      window.location.href = "https://qwaxkblaxk.github.io/qwaxkblaxk";
-    }
-  </script>
-
-  <!-- Exit Button -->
   <button class="exit-button" id="exit-btn">⏎</button>
-
-  <!-- Modal -->
-  <div class="modal" id="passwordModal">
-    <div class="modal-content" id="modalContent">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h3>Enter Password</h3>
-      <input type="password" id="passwordInput" placeholder="Password" />
-      <button id="submitPassword">Submit</button>
-    </div>
-  </div>
 
   <div class="card">
     <div class="info">

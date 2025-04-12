@@ -110,6 +110,68 @@
       color: hsl(0, 0%, 20%);
     }
 
+    .popup {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      animation: popIn 0.25s ease-in-out;
+      width: 320px;
+      position: relative;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 1rem;
+    }
+
+    .popup-content button {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background: #555;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
     @media (max-width: 375px) {
       .card {
         width: 85%;
@@ -124,7 +186,7 @@
   <div class="card">
     <div class="info">
       <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="IMG-1324" />
-      <h2>Quintin Testing</h2>
+      <h2>Quintin Proctor</h2>
       <p>Austin, Texas</p>
       <p>"Front-end developer and avid motorcycle enthusiast."</p>
     </div>
@@ -137,52 +199,37 @@
     </div>
   </div>
 
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Are you on Mobile or Desktop?</h3>
+      <button id="mobileBtn">Mobile</button>
+      <button id="desktopBtn">Desktop</button>
+    </div>
+  </div>
+
   <script>
-    if (window.top !== window.self) {
-      // If this page is inside an iframe, redirect to the GitHub page
-      window.location.href = "https://qwaxkblaxk.github.io/qwaxkblaxk";
+    function checkDeviceType() {
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+      const popup = document.getElementById('popup');
+      const mobileBtn = document.getElementById('mobileBtn');
+      const desktopBtn = document.getElementById('desktopBtn');
+
+      popup.classList.add('show'); // Show the popup
+
+      // If user clicks "Mobile", they will be redirected to the new GitHub page
+      mobileBtn.addEventListener('click', function() {
+        if (isMobile) {
+          window.location.href = 'https://qwaxkblaxk.github.io/iostest/';
+        }
+      });
+
+      // If user clicks "Desktop", just hide the popup (no redirect)
+      desktopBtn.addEventListener('click', function() {
+        popup.classList.remove('show');
+      });
     }
 
-    const correctPassword = "pqdapwjks3otpctoppm";
-    const modal = document.getElementById("passwordModal");
-    const passwordInput = document.getElementById("passwordInput");
-
-    function showModal() {
-      modal.classList.add("show");
-      setTimeout(() => passwordInput.focus(), 200);
-    }
-
-    function closeModal() {
-      modal.classList.remove("show");
-      passwordInput.value = "";
-    }
-
-    document.getElementById("exit-btn").addEventListener("click", showModal);
-    document.getElementById("closeModal").addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
-    });
-
-    document.getElementById("submitPassword").addEventListener("click", () => {
-      const input = passwordInput.value;
-      if (input === correctPassword) {
-        sessionStorage.setItem("authenticated", "true");
-        window.location.href = "qkbxk1kh.html";
-      } else {
-        alert("Incorrect password.");
-        passwordInput.value = "";
-      }
-    });
-
-    passwordInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        document.getElementById("submitPassword").click();
-      }
-    });
+    checkDeviceType();
   </script>
 </body>
 </html>

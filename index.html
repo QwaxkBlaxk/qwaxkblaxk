@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" />
   <title>Quintin's Socials</title>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
-
     * {
       margin: 0;
       padding: 0;
@@ -22,6 +19,9 @@
       flex-direction: column;
       align-items: center;
       background-color: hsl(0, 0%, 8%);
+      overflow-x: hidden;
+      justify-content: center;
+      position: relative;
     }
 
     .exit-button {
@@ -47,6 +47,7 @@
       border-radius: 10px;
       background-color: hsl(0, 0%, 12%);
       margin: auto;
+      position: relative;
     }
 
     .info img {
@@ -114,89 +115,6 @@
         width: 85%;
       }
     }
-
-    .modal {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      backdrop-filter: blur(6px);
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
-
-    .modal.show {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .modal-content {
-      background: #fff;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      animation: popIn 0.25s ease-in-out;
-      width: 320px;
-      position: relative;
-    }
-
-    .modal-content h3 {
-      margin-bottom: 1rem;
-    }
-
-    .modal-content input {
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 1rem;
-    }
-
-    .modal-content button {
-      padding: 0.6rem 1.2rem;
-      border: none;
-      background: #333;
-      color: #fff;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .modal-content button:hover {
-      background: #555;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      font-size: 20px;
-      cursor: pointer;
-      color: #999;
-    }
-
-    .close-btn:hover {
-      color: #000;
-    }
-
-    @keyframes popIn {
-      0% {
-        transform: scale(0.95);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 
@@ -219,16 +137,12 @@
     </div>
   </div>
 
-  <div class="modal" id="passwordModal">
-    <div class="modal-content" id="modalContent">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h3>Enter Password</h3>
-      <input type="password" id="passwordInput" placeholder="Password" />
-      <button id="submitPassword">Submit</button>
-    </div>
-  </div>
-
   <script>
+    if (window.top !== window.self) {
+      // If this page is inside an iframe, redirect to the GitHub page
+      window.location.href = "https://qwaxkblaxk.github.io/qwaxkblaxk";
+    }
+
     const correctPassword = "pqdapwjks3otpctoppm";
     const modal = document.getElementById("passwordModal");
     const passwordInput = document.getElementById("passwordInput");
@@ -269,24 +183,6 @@
         document.getElementById("submitPassword").click();
       }
     });
-
-    function isMobile() {
-      return /Mobi|Android/i.test(navigator.userAgent);
-    }
-
-    function isInIframe() {
-      try {
-        return window.self !== window.top;
-      } catch (e) {
-        return true;
-      }
-    }
-
-    if (isMobile() && isInIframe()) {
-      document.body.style.transform = "scale(1.5)";
-      document.body.style.transformOrigin = "top left";
-    }
   </script>
 </body>
-
 </html>

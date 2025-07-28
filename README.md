@@ -1,4 +1,4 @@
-# QwaxkBlaxk.com - Social Links Hub
+# kyubexx.com - Social Links Hub
 
 This repository hosts the source code for my personal social links website, qwaxkblaxk.com.  It serves as a central hub to easily access all my online profiles and connect with me across different platforms. I mostly made this just so I have a link to slap on my bio.
 

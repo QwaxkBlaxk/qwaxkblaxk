@@ -30,31 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated background particles */
-.bg-particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
-  50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
-}
-
 .container {
   background: rgba(15, 15, 15, 0.9);
   backdrop-filter: blur(20px);
@@ -93,37 +68,14 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
   margin: 0 auto 30px;
-  font-size: 48px;
-  color: white;
   box-shadow:
     0 20px 40px rgba(102, 126, 234, 0.3),
     0 0 0 4px rgba(255, 255, 255, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-}
-
-.profile-pic::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: rotate(45deg);
-  animation: shine 3s ease-in-out infinite;
-}
-
-@keyframes shine {
-  0% { transform: rotate(45deg) translateX(-100%); }
-  50% { transform: rotate(45deg) translateX(100%); }
-  100% { transform: rotate(45deg) translateX(100%); }
 }
 
 .profile-pic:hover {
@@ -156,8 +108,8 @@ body {
 }
 
 .social-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 24px;
   margin-top: 0;
 }
@@ -178,28 +130,6 @@ body {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  flex-direction: column;
-  font-weight: 700;
-  color: white;
-  font-size: 14px;
-  letter-spacing: 1px;
-  user-select: none;
-}
-
-.social-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.6s ease;
-  z-index: 0;
-}
-
-.social-link:hover::before {
-  left: 100%;
 }
 
 .social-link:hover {
@@ -208,7 +138,6 @@ body {
     0 20px 40px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
-  color: white;
 }
 
 .social-link:active {
@@ -222,11 +151,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.3s ease;
-  margin-bottom: 6px;
-}
-
-.social-link:hover .social-icon {
-  transform: scale(1.1);
 }
 
 /* Custom icon backgrounds */
@@ -261,7 +185,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: 'Inter', sans-serif;
-  margin-bottom: 6px;
+  user-select: none;
 }
 
 .email-icon {
@@ -271,7 +195,6 @@ body {
   background-position: center;
   width: 45px;
   height: 45px;
-  margin-bottom: 6px;
   filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
 }
 
@@ -292,7 +215,6 @@ body {
   }
 
   .social-links {
-    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
 
@@ -300,7 +222,6 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 16px;
-    font-size: 12px;
   }
 
   .social-icon, .resume-icon, .email-icon {
@@ -316,19 +237,6 @@ body {
   .profile-pic {
     width: 100px;
     height: 100px;
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 320px) {
-  .social-links {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  
-  .social-link {
-    width: 75px;
-    height: 75px;
   }
 }
 </style>
@@ -336,69 +244,36 @@ body {
 <body>
   <div class="container">
     <div class="profile-section">
-      <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="Quintin Procror" class="profile-pic" style="border-radius: 50%; object-fit: cover; width: 120px; height: 120px; margin-bottom: 30px;"/>
+      <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="Quintin Procror" class="profile-pic" />
       <h1 class="name">Quintin Procror</h1>
       <p class="bio">Someone looking to be the person people rely on, not the person who relies on.</p>
     </div>
 
     <div class="social-links">
-      <a href="https://instagram.com/kyubexx" target="_blank" rel="noopener" class="social-link">
+      <a href="https://instagram.com/kyubexx" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
         <div class="social-icon instagram-icon"></div>
-        Instagram
       </a>
 
-      <a href="https://tiktok.com/@qkbxk" target="_blank" rel="noopener" class="social-link">
+      <a href="https://tiktok.com/@qkbxk" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
         <div class="social-icon tiktok-icon"></div>
-        TikTok
       </a>
 
-      <a href="https://snapchat.com/add/qp2.xx" target="_blank" rel="noopener" class="social-link">
+      <a href="https://snapchat.com/add/qp2.xx" target="_blank" rel="noopener" class="social-link" aria-label="Snapchat">
         <div class="social-icon snapchat-icon"></div>
-        Snapchat
       </a>
 
-      <a href="https://step.com/$/qwaxkblaxk" target="_blank" rel="noopener" class="social-link">
+      <a href="https://step.com/$/qwaxkblaxk" target="_blank" rel="noopener" class="social-link" aria-label="Step Banking">
         <div class="social-icon step-icon"></div>
-        Step Banking
       </a>
 
-      <a href="kyubexx.com/Resume2025.pdf" target="_blank" rel="noopener" class="social-link">
+      <a href="kyubexx.com/Resume2025.pdf" target="_blank" rel="noopener" class="social-link" aria-label="Resume">
         <div class="resume-icon">RESUME</div>
       </a>
 
-      <a href="mailto:admin@kyubexx.com" target="_blank" rel="noopener" class="social-link">
+      <a href="mailto:admin@kyubexx.com" target="_blank" rel="noopener" class="social-link" aria-label="Email">
         <div class="email-icon"></div>
-        Email
       </a>
     </div>
   </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const socialLinks = document.querySelectorAll('.social-link');
-
-  socialLinks.forEach(link => {
-    link.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-5px) scale(1.05)';
-    });
-
-    link.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0) scale(1)';
-    });
-
-    link.addEventListener('click', function() {
-      this.style.transform = 'translateY(-2px) scale(0.98)';
-      setTimeout(() => {
-        this.style.transform = 'translateY(-5px) scale(1.05)';
-      }, 100);
-    });
-  });
-
-  socialLinks.forEach((link, index) => {
-    link.style.animationDelay = `${index * 0.1}s`;
-    link.style.animation = 'fadeIn 0.8s ease-out forwards';
-  });
-});
-</script>
 </body>
 </html>

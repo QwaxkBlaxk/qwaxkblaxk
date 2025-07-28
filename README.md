@@ -10,7 +10,7 @@ This simple website provides a clean and organized way to find me on various soc
 
 *   **HTML:**  The structure and content of the website.
 *   **CSS:** Styling and visual presentation of the website.
-*   **Hosting Platform:** IONOS as the domain, (qwaxkblaxk.com / kyubexx.com) and Netlify as the Name Servers the website is hosted by.
+*   **Hosting Platform:** IONOS as the domain, (kyubexx.com) and Netlify as the Name Servers the website is hosted by.
 ## Features
 
 *   Clear and concise display of social media icons and links.
@@ -41,5 +41,5 @@ If you'd like to contribute to this project, please open an issue or submit a pu
 
 ## Contact
 
-You can reach me through the social links provided on the website, preferably VoIP.
+You can reach me through the social links provided on the website, preferably email.
 

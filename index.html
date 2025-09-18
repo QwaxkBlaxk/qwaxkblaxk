@@ -49,14 +49,8 @@
     }
 
     @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .profile-section {
@@ -166,9 +160,7 @@
         transition: left 0.6s ease;
     }
 
-    .social-link:hover::before {
-        left: 100%;
-    }
+    .social-link:hover::before { left: 100%; }
 
     .social-link:hover {
         transform: translateY(-8px) scale(1.05);
@@ -178,9 +170,7 @@
         background: rgba(255, 255, 255, 0.1);
     }
 
-    .social-link:active {
-        transform: translateY(-4px) scale(1.02);
-    }
+    .social-link:active { transform: translateY(-4px) scale(1.02); }
 
     .social-icon {
         width: 50px;
@@ -199,9 +189,7 @@
         user-select: none;
     }
 
-    .social-link:hover .social-icon {
-        transform: scale(1.1);
-    }
+    .social-link:hover .social-icon { transform: scale(1.1); }
 
     .instagram-icon {
         background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ce/80/65/ce80650d-ab63-0703-688b-fed6f187568e/Prod-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/460x0w.webp");
@@ -234,8 +222,8 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .email-icon {
-        background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7e/98/66/7e986692-85f8-3690-c839-fe676f7b0658/logo_calendar_2020q4_color-0-1x_U007epad-0-0-0-1-0-0-0-0-85-220-0.png/460x0w.webp");
+    .github-icon {
+        background-image: url("https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU=s96");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -246,61 +234,19 @@
         font-size: 0;
     }
 
-    /* Mobile Responsiveness */
     @media (max-width: 480px) {
-        .container {
-            padding: 40px 25px;
-            margin: 15px;
-            border-radius: 20px;
-        }
-
-        .name {
-            font-size: 28px;
-        }
-
-        .bio {
-            font-size: 15px;
-        }
-
-        .social-links {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .social-link {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            font-size: 28px;
-        }
-
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            font-size: 40px;
-        }
-
-        .resume-icon {
-            font-size: 10px;
-            padding: 0 4px;
-        }
+        .container { padding: 40px 25px; margin: 15px; border-radius: 20px; }
+        .name { font-size: 28px; }
+        .bio { font-size: 15px; }
+        .social-links { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .social-link { width: 80px; height: 80px; border-radius: 16px; }
+        .social-icon { width: 40px; height: 40px; font-size: 28px; }
+        .profile-pic { width: 100px; height: 100px; font-size: 40px; }
     }
 
     @media (max-width: 320px) {
-        .social-links {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 75px;
-            height: 75px;
-        }
+        .social-links { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .social-link { width: 75px; height: 75px; }
     }
 </style>
 </head>
@@ -308,10 +254,10 @@
 <div class="container">
     <div class="profile-section">
         <div class="profile-pic">
-            <img src="https://i.ibb.co/nt3BfLr/IMG-1324.jpg" alt="Quintin Procror" style="width:120px; height:120px; border-radius:50%;" />
+            <img src="https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/c9a7f068b28105650616d0f10105caa1~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640&refresh_token=1bf033e0&x-expires=1758394800&x-signature=cS8NbIdhilIW3bfirFbN9U0fw3g%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8" alt="Quintin Procror" style="width:120px; height:120px; border-radius:50%;" />
         </div>
         <h1 class="name">Quintin Proctor</h1>
-        <p class="bio">Looking forward to being the person people rely on, not the person who relies on.</p>
+        <p class="bio">Someone looking to be the person people rely on, not the person who relies on.</p>
     </div>
 
     <div class="social-links">
@@ -319,7 +265,7 @@
             <div class="social-icon instagram-icon"></div>
         </a>
 
-        <a href="https://tiktok.com/@kyube.xx" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+        <a href="https://tiktok.com/@qkbxk" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
             <div class="social-icon tiktok-icon"></div>
         </a>
 
@@ -335,8 +281,8 @@
             <div class="social-icon resume-icon">RESUME</div>
         </a>
 
-        <a href="https://calendar.google.com/calendar/u/0?cid=YWxmYW5vcXVpbnRpbkBnbWFpbC5jb20" class="social-link" target="_blank" rel="noopener" aria-label="Email">
-            <div class="social-icon email-icon"></div>
+        <a href="https://github.com/QwaxkBlaxk" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+            <div class="social-icon github-icon"></div>
         </a>
     </div>
 </div>

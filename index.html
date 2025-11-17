@@ -77,29 +77,11 @@
         overflow: hidden;
     }
 
-    .profile-pic::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transform: rotate(45deg);
-        animation: shine 3s ease-in-out infinite;
-    }
-
-    @keyframes shine {
-        0% { transform: rotate(45deg) translateX(-100%); }
-        50% { transform: rotate(45deg) translateX(100%); }
-        100% { transform: rotate(45deg) translateX(100%); }
-    }
-
-    .profile-pic:hover {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 
-            0 30px 60px rgba(102, 126, 234, 0.4),
-            0 0 0 4px rgba(255, 255, 255, 0.2);
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
     }
 
     .name {
@@ -149,28 +131,10 @@
         margin: 0 auto;
     }
 
-    .social-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .social-link:hover::before { left: 100%; }
-
     .social-link:hover {
         transform: translateY(-8px) scale(1.05);
-        box-shadow: 
-            0 20px 40px rgba(0, 0, 0, 0.3),
-            0 0 0 1px rgba(255, 255, 255, 0.2);
         background: rgba(255, 255, 255, 0.1);
     }
-
-    .social-link:active { transform: translateY(-4px) scale(1.02); }
 
     .social-icon {
         width: 50px;
@@ -178,18 +142,9 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transition: all 0.3s ease;
         border-radius: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: 36px;
-        font-weight: 600;
-        color: #999;
-        user-select: none;
     }
-
-    .social-link:hover .social-icon { transform: scale(1.1); }
 
     .instagram-icon {
         background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ce/80/65/ce80650d-ab63-0703-688b-fed6f187568e/Prod-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/460x0w.webp");
@@ -211,77 +166,53 @@
         background: #444;
         color: #fff;
         font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 12px;
-        user-select: none;
-        box-shadow: 0 0 8px rgba(255,255,255,0.15);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgba(255,255,255,0.3);
     }
 
     .github-icon {
         background-image: url("https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU=s96");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: 12px;
-        width: 50px;
-        height: 50px;
-        color: transparent;
-        font-size: 0;
-    }
-
-    @media (max-width: 480px) {
-        .container { padding: 40px 25px; margin: 15px; border-radius: 20px; }
-        .name { font-size: 28px; }
-        .bio { font-size: 15px; }
-        .social-links { grid-template-columns: repeat(3, 1fr); gap: 18px; }
-        .social-link { width: 80px; height: 80px; border-radius: 16px; }
-        .social-icon { width: 40px; height: 40px; font-size: 28px; }
-        .profile-pic { width: 100px; height: 100px; font-size: 40px; }
-    }
-
-    @media (max-width: 320px) {
-        .social-links { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .social-link { width: 75px; height: 75px; }
     }
 </style>
 </head>
+
 <body>
 <div class="container">
     <div class="profile-section">
         <div class="profile-pic">
-            <img src="https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/c9a7f068b28105650616d0f10105caa1~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640&refresh_token=1bf033e0&x-expires=1758394800&x-signature=cS8NbIdhilIW3bfirFbN9U0fw3g%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8" alt="Quintin Procror" style="width:120px; height:120px; border-radius:50%;" />
+            <img src="https://i.ibb.co/W4NBfQZm/" alt="Profile" />
         </div>
         <h1 class="name">Quintin Proctor</h1>
         <p class="bio">Someone looking to be the person people rely on, not the person who relies on.</p>
     </div>
 
     <div class="social-links">
-        <a href="https://instagram.com/kyubexx" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://instagram.com/kyubexx" class="social-link" target="_blank">
             <div class="social-icon instagram-icon"></div>
         </a>
 
-        <a href="https://tiktok.com/@qkbxk" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+        <a href="https://tiktok.com/@qkbxk" class="social-link" target="_blank">
             <div class="social-icon tiktok-icon"></div>
         </a>
 
-        <a href="https://snapchat.com/add/qp2.xx" class="social-link" target="_blank" rel="noopener" aria-label="Snapchat">
+        <a href="https://snapchat.com/add/qp2.xx" class="social-link" target="_blank">
             <div class="social-icon snapchat-icon"></div>
         </a>
 
-        <a href="https://step.com/$/qwaxkblaxk" class="social-link" target="_blank" rel="noopener" aria-label="Step Banking">
+        <a href="https://step.com/$/qwaxkblaxk" class="social-link" target="_blank">
             <div class="social-icon step-icon"></div>
         </a>
 
-        <a href="https://kyubexx.com/Resume2025.pdf" class="social-link" target="_blank" rel="noopener" aria-label="Resume">
+        <a href="https://kyubexx.com/Resume2025.pdf" class="social-link" target="_blank">
             <div class="social-icon resume-icon">RESUME</div>
         </a>
 
-        <a href="https://github.com/QwaxkBlaxk" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <a href="https://github.com/QwaxkBlaxk" class="social-link" target="_blank">
             <div class="social-icon github-icon"></div>
         </a>
     </div>
